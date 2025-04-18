@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:controller="Controllers.AddMedController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text layoutX="191.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ajouter un medicament">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtName" layoutX="226.0" layoutY="153.0" />
+      <TextField fx:id="txtDuration" layoutX="226.0" layoutY="228.0" />
+      <ComboBox fx:id="txtDosage" layoutX="226.0" layoutY="191.0" prefWidth="150" />
+      <ComboBox fx:id="txtFrequency" layoutX="226.0" layoutY="266.0" prefWidth="150" />
+      <Text layoutX="45.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
+      <Text layoutX="45.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dosage" />
+      <Text layoutX="45.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Duration" />
+      <Text layoutX="45.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Frequency" />
+      <Button fx:id="btnAdd" layoutX="274.0" layoutY="309.0" mnemonicParsing="false" onAction="#addMedicament" text="Add" />
+      <Button layoutX="400.0" layoutY="309.0" text="View Meds" onAction="#goToDisplayMed" />
+   </children>
+</AnchorPane>
