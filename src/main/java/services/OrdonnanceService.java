@@ -17,10 +17,12 @@ public class OrdonnanceService implements Crud<Ordonnance> {
 
     @Override
     public void create(Ordonnance obj) throws Exception {
-        String sql = "INSERT INTO ordonnance (description, date_prescription) VALUES (?, ?)";
+        String sql = "INSERT INTO ordonnance (description, date_prescription, patient_id, doctor_id) VALUES (?, ?, ?, ?)";
         PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
         stmt.setString(1, obj.getDescription());
         stmt.setTimestamp(2, new Timestamp(obj.getDatePrescription().getTime()));
+        stmt.setInt(3, 13);  // Static patient ID
+        stmt.setInt(4, 15);  // Static doctor ID
         stmt.executeUpdate();
 
         ResultSet generatedKeys = stmt.getGeneratedKeys();

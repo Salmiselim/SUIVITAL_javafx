@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="Controllers.HomeController"
+      alignment="TOP_CENTER" spacing="30"
+      style="-fx-background-color: linear-gradient(to bottom, #b0f2b4, #48c774); -fx-padding: 40;">
+
+    <!-- Header -->
+    <VBox alignment="CENTER" spacing="8"
+          style="-fx-background-color: white; -fx-background-radius: 18; -fx-padding: 30 60; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 12, 0.2, 0, 4);">
+        <Label text="🌿 SuiviVital - Tableau de bord Admin"
+               style="-fx-font-size: 32px; -fx-text-fill: #2c3e50; -fx-font-weight: bold;" />
+        <Label text="Bienvenue, Administrateur"
+               style="-fx-font-size: 18px; -fx-text-fill: #7f8c8d;" />
+    </VBox>
+
+    <!-- Stats Cards -->
+    <HBox spacing="30" alignment="CENTER">
+        <VBox alignment="CENTER" spacing="6"
+              style="-fx-background-color: #ffffff; -fx-background-radius: 12; -fx-padding: 18 32; -fx-effect: dropshadow(gaussian, rgba(52,152,219,0.10), 6, 0.2, 0, 2);">
+            <Label text="Ordonnances" style="-fx-font-size: 15px; -fx-text-fill: #7f8c8d;" />
+            <Label fx:id="ordonnanceCountLabel" text="0" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #3498db;" />
+        </VBox>
+        <VBox alignment="CENTER" spacing="6"
+              style="-fx-background-color: #ffffff; -fx-background-radius: 12; -fx-padding: 18 32; -fx-effect: dropshadow(gaussian, rgba(155,89,182,0.10), 6, 0.2, 0, 2);">
+            <Label text="Médicaments" style="-fx-font-size: 15px; -fx-text-fill: #7f8c8d;" />
+            <Label fx:id="medicamentCountLabel" text="0" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #9b59b6;" />
+        </VBox>
+    </HBox>
+
+    <LineChart fx:id="ordonnanceChart" title="Ordonnances par jour"
+               prefHeight="300" prefWidth="600"
+               style="-fx-background-color: white; -fx-background-radius: 12; -fx-padding: 18;">
+        <xAxis>
+            <CategoryAxis label="Jour" />
+        </xAxis>
+        <yAxis>
+            <NumberAxis label="Nombre d'ordonnances" />
+        </yAxis>
+    </LineChart>
+
+    <!-- Main Actions -->
+    <HBox spacing="30" alignment="CENTER">
+        <Button text="Gérer Ordonnances"
+                onAction="#handleOrdonnanceButton"
+                style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold; -fx-background-radius: 25; -fx-padding: 12 28; -fx-cursor: hand;" />
+        <Button text="Gérer Médicaments"
+                onAction="#handleMedicamentButton"
+                style="-fx-background-color: #9b59b6; -fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold; -fx-background-radius: 25; -fx-padding: 12 28; -fx-cursor: hand;" />
+    </HBox>
+
+ 
+</VBox>
