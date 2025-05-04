@@ -5,29 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="633719e1-bbf9-4339-b08a-c7979785c246" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/AddOrdonnanceController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/DetailsOrdonnanceController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/DisplayOrdController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/HomeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/UpdateOrdonnanceController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/AddOrd.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/DetailsOrd.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/DisplayOrd.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/EditOrd.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Home.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/AddMedController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/AddMedController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/DisplayMedController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/DisplayMedController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/EditMedController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/EditMedController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Ordonnance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Ordonnance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/MedService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/MedService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/OrdonnanceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/OrdonnanceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/AddMed.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AddMed.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/DisplayMed.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/DisplayMed.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/EditMed.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/EditMed.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/styles.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +23,26 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {}
+}</component>
+  <component name="GitHubPullRequestState">{
+  &quot;prStates&quot;: [
+    {
+      &quot;id&quot;: {
+        &quot;id&quot;: &quot;PR_kwDOObqSxc6U2k20&quot;,
+        &quot;number&quot;: 1
+      },
+      &quot;lastSeen&quot;: 1746368536101
+    }
+  ]
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Salmiselim/SUIVITAL_javafx.git&quot;,
+    &quot;accountId&quot;: &quot;00c7edb9-36c1-4e20-8d22-87d931a4d2a4&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -61,7 +59,7 @@
     &quot;Application.JavaFXApp.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;selim&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Selim-PC/Desktop/3A56/JAVA/SUIVITAL/src/main/resources&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -127,6 +125,8 @@
       <workItem from="1745848763798" duration="4244000" />
       <workItem from="1745934811356" duration="946000" />
       <workItem from="1746174236443" duration="4001000" />
+      <workItem from="1746368230379" duration="391000" />
+      <workItem from="1746368644451" duration="299000" />
     </task>
     <servers />
   </component>
@@ -134,11 +134,52 @@
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="7be0c81c-cfe9-4388-8cf1-daa779dafc9a" value="TOOL_WINDOW" />
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
+        <entry key="7be0c81c-cfe9-4388-8cf1-daa779dafc9a">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="range">
+                    <value>
+                      <list>
+                        <option value="origin/master..origin/selim" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/selim" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
