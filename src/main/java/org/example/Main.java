@@ -19,7 +19,7 @@ public class Main extends Application {
         Parent root = loader.load();
 
         // Create a large scene (Full HD)
-        Scene scene = new Scene(root, 1400, 700); // or change to 1920, 1080 if you prefer
+        Scene scene = new Scene(root, 1400, 700);
 
 
 

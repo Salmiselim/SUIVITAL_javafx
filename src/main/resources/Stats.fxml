@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" 
+      fx:controller="Controllers.StatsController" 
+      stylesheets="@styles.css" 
+      spacing="20"
+      VBox.vgrow="ALWAYS">
+    
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+    
+    <Label text="Statistiques des Réclamations" styleClass="title"/>
+    
+    <LineChart fx:id="monthlyChart" title="Réclamations par Mois" 
+               VBox.vgrow="ALWAYS" HBox.hgrow="ALWAYS">
+        <xAxis>
+            <CategoryAxis label="Mois"/>
+        </xAxis>
+        <yAxis>
+            <NumberAxis label="Nombre de Réclamations"/>
+        </yAxis>
+    </LineChart>
+</VBox> 

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.time.LocalDate?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="Controllers.AddReclamationController">
+    <children>
+        <VBox spacing="10" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10">
+            <Label text="Ajouter une Réclamation" styleClass="title"/>
+
+            <TextField fx:id="tfSujet" promptText="Objet"/>
+            <TextArea fx:id="taDescription" promptText="Description" prefRowCount="4"/>
+            <Label fx:id="lblDate" text="Date de réclamation : " style="-fx-font-style: italic;"/>
+            <Button text="Enregistrer" onAction="#onSave"/>
+        </VBox>
+    </children>
+</AnchorPane>

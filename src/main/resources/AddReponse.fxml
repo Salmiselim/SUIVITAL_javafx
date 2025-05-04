@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.time.LocalDate?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="Controllers.AddReponseController">
+    <children>
+        <VBox spacing="10" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10">
+            <Label text="Ajouter une Réponse" styleClass="title"/>
+
+            <TextField fx:id="tfObjet" promptText="Objet"/>
+            <TextArea fx:id="taCommentaire" promptText="Commentaire" prefRowCount="4"/>
+            <Label fx:id="lblDate" text="Date de la réponse : " style="-fx-font-style: italic;"/>
+
+            <Button text="Enregistrer" onAction="#onSave"/>
+        </VBox>
+    </children>
+</AnchorPane>

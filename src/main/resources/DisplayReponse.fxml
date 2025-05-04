@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" 
+      fx:controller="Controllers.DisplayReponseController" 
+      stylesheets="@styles.css" 
+      spacing="10"
+      VBox.vgrow="ALWAYS">
+    
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+    
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Rechercher:"/>
+        <TextField fx:id="searchField" promptText="Entrez un mot-clé..."/>
+        <Label text="Date:"/>
+        <DatePicker fx:id="datePicker"/>
+        <Button text="Ajouter" onAction="#onAdd"/>
+        <Button text="Modifier" onAction="#onEdit"/>
+        <Button text="Supprimer" onAction="#onDelete"/>
+    </HBox>
+    
+    <TableView fx:id="tableViewReponses" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+            <TableColumn fx:id="colObjet" text="Objet" prefWidth="200"/>
+            <TableColumn fx:id="colMessage" text="Message" prefWidth="400"/>
+            <TableColumn fx:id="colDate" text="Date" prefWidth="150"/>
+            <TableColumn fx:id="colReclamationId" text="ID Réclamation" prefWidth="100"/>
+        </columns>
+    </TableView>
+</VBox>
