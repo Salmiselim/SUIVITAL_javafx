@@ -1,8 +1,8 @@
 package Controllers;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ComboBox;
 import javafx.stage.Stage;
 import models.Medicament;
 import services.MedService;
@@ -10,38 +10,40 @@ import javafx.scene.input.KeyEvent;
 
 public class EditMedController {
 
-    @FXML private TextField txtName;
-    @FXML private ComboBox<String> txtDosage;
-    @FXML private TextField txtDuration;
-    @FXML private ComboBox<String> txtFrequency;
+    @FXML private TextField nameField;
+    @FXML private ComboBox<String> dosageField;
+    @FXML private TextField durationField;
+    @FXML private ComboBox<String> frequencyField;
 
     private final MedService medService = new MedService();
     private Medicament med;
 
     public void setMed(Medicament med) {
         this.med = med;
-        txtName.setText(med.getName());
-        txtDosage.setValue(med.getDosage());
-        txtDuration.setText(String.valueOf(med.getDuration()));
-        txtFrequency.setValue(med.getFrequency());
+        nameField.setText(med.getName());
+        dosageField.setValue(med.getDosage());
+        durationField.setText(String.valueOf(med.getDuration()));
+        frequencyField.setValue(med.getFrequency());
     }
 
     @FXML
     public void initialize() {
-        txtFrequency.getItems().addAll(
-                "Once a day",
-                "Two times a day",
-                "Three times a day"
+        // Initialize frequency options
+        frequencyField.getItems().addAll(
+            "Une fois par jour",
+            "Deux fois par jour",
+            "Trois fois par jour"
         );
 
-        txtDosage.getItems().addAll(
-                "1g",
-                "250mg",
-                "500mg",
-                "100mg"
+        // Initialize dosage options
+        dosageField.getItems().addAll(
+            "1g",
+            "250mg",
+            "500mg",
+            "100mg"
         );
 
-        txtDuration.addEventFilter(KeyEvent.KEY_TYPED, event -> {
+        durationField.addEventFilter(KeyEvent.KEY_TYPED, event -> {
             char ch = event.getCharacter().charAt(0);
             if (!Character.isDigit(ch)) {
                 event.consume();
@@ -50,26 +52,32 @@ public class EditMedController {
     }
 
     @FXML
-    public void saveMed() {
+    public void handleSave() {
         try {
-            if (txtName.getText().isEmpty() || txtDosage.getValue() == null ||
-                txtDuration.getText().isEmpty() || txtFrequency.getValue() == null) {
-                System.out.println("Please fill all fields.");
+            if (nameField.getText().isEmpty() || dosageField.getValue() == null ||
+                durationField.getText().isEmpty() || frequencyField.getValue() == null) {
+                System.out.println("Veuillez remplir tous les champs.");
                 return;
             }
 
-            med.setName(txtName.getText());
-            med.setDosage(txtDosage.getValue());
-            med.setDuration(Integer.parseInt(txtDuration.getText()));
-            med.setFrequency(txtFrequency.getValue());
+            med.setName(nameField.getText());
+            med.setDosage(dosageField.getValue());
+            med.setDuration(Integer.parseInt(durationField.getText()));
+            med.setFrequency(frequencyField.getValue());
 
             medService.update(med);
-            Stage stage = (Stage) txtName.getScene().getWindow();
+            Stage stage = (Stage) nameField.getScene().getWindow();
             stage.close();
         } catch (NumberFormatException e) {
-            System.out.println("Duration must be a number.");
+            System.out.println("La durée doit être un nombre.");
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    public void handleCancel() {
+        Stage stage = (Stage) nameField.getScene().getWindow();
+        stage.close();
     }
 }

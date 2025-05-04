@@ -6,7 +6,7 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx/23.0.1"
             xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="Controllers.DisplayMedController"
+            fx:controller="Controllers.DisplayOrdController"
             prefWidth="1000" prefHeight="700"
             style="-fx-background-color: #f5f7fa; -fx-font-family: 'Segoe UI';">
 
@@ -20,29 +20,36 @@
         <HBox spacing="20" alignment="CENTER_LEFT" style="-fx-padding: 20;">
             <Label text="SUIVITAL"
                    style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
-            <Label text="Gestion des Médicaments"
+            <Label text="Gestion des Ordonnances"
                    style="-fx-font-size: 18px; -fx-text-fill: #7f8c8d;" />
         </HBox>
 
         <!-- Search and Actions Section -->
         <HBox spacing="20" alignment="CENTER" style="-fx-padding: 0 20;">
             <TextField fx:id="searchField"
-                      promptText="Rechercher un médicament..."
+                      promptText="Rechercher une ordonnance..."
                       style="-fx-background-color: white; -fx-background-radius: 25; -fx-padding: 8 15; -fx-font-size: 14px; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 5, 0.2, 0, 2);" />
+            <Button fx:id="toggleOrderButton"
+                    text="Trier par Date ↓"
+                    onAction="#handleToggleOrder"
+                    style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 25; -fx-font-size: 14px; -fx-padding: 8 15; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0.2, 0, 2);" />
             <Button text="➕ Ajouter"
-                    onAction="#openAddMed"
+                    onAction="#openAddOrd"
                     style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 25; -fx-font-size: 14px; -fx-padding: 8 15; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0.2, 0, 2);" />
+            <Button text="🤖 Suggestions IA"
+                    onAction="#openSymptomSelection"
+                    style="-fx-background-color: #9b59b6; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 25; -fx-font-size: 14px; -fx-padding: 8 15; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0.2, 0, 2);" />
         </HBox>
 
-        <!-- Scrollable Medications List -->
+        <!-- Scrollable Ordonnances List -->
         <ScrollPane fitToWidth="true" 
                     hbarPolicy="NEVER"
                     style="-fx-background-color: transparent; -fx-padding: 0 20;">
             <content>
-                <VBox fx:id="medicamentContainer"
+                <VBox fx:id="ordonnanceContainer"
                       spacing="15"
                       style="-fx-padding: 0 0 20 0;">
-                    <!-- Medication cards will be added here -->
+                    <!-- Ordonnance cards will be added here -->
                 </VBox>
             </content>
         </ScrollPane>

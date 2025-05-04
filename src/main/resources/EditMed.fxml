@@ -1,28 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
 
-<AnchorPane fx:controller="Controllers.EditMedController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <Text layoutX="191.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit Medicament">
-         <font>
-            <Font size="21.0" />
-         </font>
-      </Text>
-      <TextField fx:id="txtName" layoutX="226.0" layoutY="153.0" />
-      <TextField fx:id="txtDuration" layoutX="226.0" layoutY="228.0" />
-      <ComboBox fx:id="txtDosage" layoutX="226.0" layoutY="191.0" prefWidth="150.0" />
-      <ComboBox fx:id="txtFrequency" layoutX="226.0" layoutY="266.0" prefWidth="150.0" />
-      <Text layoutX="45.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" />
-      <Text layoutX="45.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dosage" />
-      <Text layoutX="45.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Duration" />
-      <Text layoutX="45.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Frequency" />
-      <Button fx:id="btnAdd" layoutX="274.0" layoutY="309.0" mnemonicParsing="false" onAction="#saveMed" text="Save" />
-      <Button layoutX="400.0" layoutY="309.0" text="View Meds" onAction="#saveMed" />
-   </children>
+<AnchorPane xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Controllers.EditMedController"
+            prefWidth="600" prefHeight="500"
+            style="-fx-background-color: #f5f7fa; -fx-font-family: 'Segoe UI';">
+
+    <VBox spacing="25"
+          alignment="TOP_CENTER"
+          AnchorPane.topAnchor="30.0"
+          AnchorPane.leftAnchor="30.0"
+          AnchorPane.rightAnchor="30.0"
+          AnchorPane.bottomAnchor="30.0"
+          style="-fx-background-color: white; -fx-padding: 40; -fx-border-radius: 15; -fx-background-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 15, 0.3, 0, 5);">
+
+        <!-- Header Section -->
+        <VBox spacing="10" alignment="CENTER">
+            <Label text="SUIVITAL"
+                   style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+            <Label text="Modifier le Médicament"
+                   style="-fx-font-size: 18px; -fx-text-fill: #7f8c8d;" />
+        </VBox>
+
+        <!-- Form Fields -->
+        <VBox spacing="15">
+            <!-- Name Field -->
+            <VBox spacing="5">
+                <Label text="Nom du Médicament"
+                       style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+                <TextField fx:id="nameField"
+                          style="-fx-background-color: white; -fx-background-radius: 5; -fx-border-color: #e9ecef; -fx-border-radius: 5; -fx-padding: 8; -fx-font-size: 14px;" />
+            </VBox>
+
+            <!-- Dosage Field -->
+            <VBox spacing="5">
+                <Label text="Dosage"
+                       style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+                <ComboBox fx:id="dosageField"
+                         promptText="Sélectionner un dosage"
+                         style="-fx-background-color: white; -fx-background-radius: 5; -fx-border-color: #e9ecef; -fx-border-radius: 5; -fx-padding: 8; -fx-font-size: 14px;" />
+            </VBox>
+
+            <!-- Frequency Field -->
+            <VBox spacing="5">
+                <Label text="Fréquence"
+                       style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+                <ComboBox fx:id="frequencyField"
+                         promptText="Sélectionner une fréquence"
+                         style="-fx-background-color: white; -fx-background-radius: 5; -fx-border-color: #e9ecef; -fx-border-radius: 5; -fx-padding: 8; -fx-font-size: 14px;" />
+            </VBox>
+
+            <!-- Duration Field -->
+            <VBox spacing="5">
+                <Label text="Durée (jours)"
+                       style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+                <TextField fx:id="durationField"
+                          style="-fx-background-color: white; -fx-background-radius: 5; -fx-border-color: #e9ecef; -fx-border-radius: 5; -fx-padding: 8; -fx-font-size: 14px;" />
+            </VBox>
+        </VBox>
+
+        <!-- Action Buttons -->
+        <HBox spacing="20" alignment="CENTER">
+            <Button text="Annuler"
+                    onAction="#handleCancel"
+                    style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 25; -fx-font-size: 14px; -fx-padding: 10 25; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0.2, 0, 2);" />
+            <Button text="Enregistrer"
+                    onAction="#handleSave"
+                    style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 25; -fx-font-size: 14px; -fx-padding: 10 25; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0.2, 0, 2);" />
+        </HBox>
+    </VBox>
 </AnchorPane>

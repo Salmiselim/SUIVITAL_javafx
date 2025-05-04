@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Controllers.SymptomSelectionController"
+            prefWidth="800" prefHeight="600"
+            style="-fx-background-color: #f5f7fa; -fx-font-family: 'Segoe UI';">
+
+    <VBox spacing="25"
+          alignment="TOP_CENTER"
+          AnchorPane.topAnchor="30.0"
+          AnchorPane.leftAnchor="30.0"
+          AnchorPane.rightAnchor="30.0"
+          AnchorPane.bottomAnchor="30.0"
+          style="-fx-background-color: white; -fx-padding: 40; -fx-border-radius: 15; -fx-background-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 15, 0.3, 0, 5);">
+
+        <!-- Header Section -->
+        <VBox spacing="10" alignment="CENTER">
+            <Label text="SUIVITAL"
+                   style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+            <Label text="Sélection des Symptômes"
+                   style="-fx-font-size: 18px; -fx-text-fill: #7f8c8d;" />
+        </VBox>
+
+        <!-- Symptoms Selection -->
+        <VBox spacing="15">
+            <Label text="Sélectionnez les symptômes:"
+                   style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+            
+            <ScrollPane fitToWidth="true" 
+                        hbarPolicy="NEVER"
+                        style="-fx-background-color: transparent;">
+                <content>
+                    <VBox fx:id="symptomsContainer" spacing="10">
+                        <!-- Symptoms will be added here dynamically -->
+                    </VBox>
+                </content>
+            </ScrollPane>
+        </VBox>
+
+        <!-- AI Suggestions -->
+        <VBox spacing="15" fx:id="suggestionsContainer" visible="false">
+            <Label text="Suggestions de Médicaments:"
+                   style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" />
+            
+            <ScrollPane fitToWidth="true" 
+                        hbarPolicy="NEVER"
+                        style="-fx-background-color: transparent;">
+                <content>
+                    <VBox fx:id="medicationsContainer" spacing="10">
+                        <!-- AI suggestions will be added here -->
+                    </VBox>
+                </content>
+            </ScrollPane>
+        </VBox>
+
+        <!-- Action Buttons -->
+        <HBox spacing="20" alignment="CENTER">
+            <Button text="Annuler"
+                    onAction="#handleCancel"
+                    style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 25; -fx-font-size: 14px; -fx-padding: 10 25; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0.2, 0, 2);" />
+            <Button text="Obtenir des Suggestions"
+                    onAction="#handleGetSuggestions"
+                    style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 25; -fx-font-size: 14px; -fx-padding: 10 25; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0.2, 0, 2);" />
+            <Button text="Continuer"
+                    onAction="#handleContinue"
+                    style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 25; -fx-font-size: 14px; -fx-padding: 10 25; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 5, 0.2, 0, 2);" />
+        </HBox>
+    </VBox>
+</AnchorPane> 
