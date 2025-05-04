@@ -1,4 +1,5 @@
 package org.example;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -14,19 +15,20 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         // Load the FXML file
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/AddMed.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Home.fxml"));
         Parent root = loader.load();
 
-        // Set up the scene
-        Scene scene = new Scene(root, 600, 400);
+        // Create a large scene (Full HD)
+        Scene scene = new Scene(root, 1400, 700); // or change to 1920, 1080 if you prefer
 
-        // Add the CSS to the scene
-        scene.getStylesheets().add(getClass().getResource("/styles.css").toExternalForm());
+
 
         // Set up the stage
-        primaryStage.setTitle("List of Medicaments");
+        primaryStage.setTitle("SuiviTale — Accueil");
         primaryStage.setScene(scene);
+        // Optional: start in fullscreen or maximized
+        primaryStage.setMaximized(true);
+
         primaryStage.show();
     }
-
 }
