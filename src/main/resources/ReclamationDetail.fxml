@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" 
+      fx:controller="Controllers.ReclamationDetailController" 
+      stylesheets="@styles.css" 
+      spacing="20"
+      VBox.vgrow="ALWAYS">
+    
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+    
+    <!-- Reclamation Section -->
+    <VBox spacing="10">
+        <Label text="Réclamation" styleClass="section-title"/>
+        
+        <VBox spacing="5" styleClass="content-box">
+            <Label text="Objet:" styleClass="field-label"/>
+            <Label fx:id="lblObjet" styleClass="field-value"/>
+            
+            <Label text="Message:" styleClass="field-label"/>
+            <TextArea fx:id="taMessage" editable="false" wrapText="true" prefRowCount="4"/>
+            
+            <Label text="Date:" styleClass="field-label"/>
+            <Label fx:id="lblDate" styleClass="field-value"/>
+        </VBox>
+    </VBox>
+    
+    <!-- Separator -->
+    <Separator/>
+    
+    <!-- Response Section -->
+    <VBox spacing="10">
+        <Label text="Réponse" styleClass="section-title"/>
+        
+        <VBox fx:id="responseContainer" spacing="5" styleClass="content-box">
+            <Label text="Aucune réponse pour le moment" fx:id="lblNoResponse" visible="true"/>
+            
+            <VBox fx:id="responseContent" spacing="5" visible="false">
+                <Label text="Objet:" styleClass="field-label"/>
+                <Label fx:id="lblResponseObjet" styleClass="field-value"/>
+                
+                <Label text="Message:" styleClass="field-label"/>
+                <TextArea fx:id="taResponseMessage" editable="false" wrapText="true" prefRowCount="4"/>
+                
+                <Label text="Date:" styleClass="field-label"/>
+                <Label fx:id="lblResponseDate" styleClass="field-value"/>
+            </VBox>
+        </VBox>
+    </VBox>
+    
+    <!-- Action Buttons -->
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button text="Fermer" onAction="#onClose"/>
+        <Button text="Exporter en PDF" onAction="#onExportPDF" styleClass="btn-primary"/>
+    </HBox>
+</VBox> 

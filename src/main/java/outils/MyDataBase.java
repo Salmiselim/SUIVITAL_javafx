@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class MyDataBase {
-    private String url = "jdbc:mysql://localhost:3306/suivital";
+    private String url = "jdbc:mysql://localhost:3306/suivitable";
     private String user = "root";
     private String password = "";
     private Connection conn;
