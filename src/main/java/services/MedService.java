@@ -1,4 +1,4 @@
-package services;
+/*package services;
 
 import models.Medicament;
 import outils.MyDataBase;
@@ -66,3 +66,4 @@ public class MedService implements Crud<Medicament> {
         return medicaments;
     }
 }
+*/

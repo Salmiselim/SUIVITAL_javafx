@@ -1,4 +1,4 @@
-package models;
+/*package models;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,3 +49,4 @@ public class Medicament {
         ordonnance.getMedicaments().remove(this);
     }
 }
+*/

@@ -1,4 +1,4 @@
-package services;
+/*package services;
 
 import models.Medicament;
 import models.Ordonnance;
@@ -110,4 +110,4 @@ public class OrdonnanceService implements Crud<Ordonnance> {
         }
         return meds;
     }
-}
+}*/
