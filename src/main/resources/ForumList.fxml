@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ForumListController">
+    <VBox fx:id="mainContainer" spacing="20" style="-fx-padding: 20; -fx-background-color: #f5f5f5;">
+        <!-- Header with title -->
+        <VBox style="-fx-background-color: #2e7d32; -fx-padding: 20; -fx-alignment: CENTER;">
+            <Label text="SUIVITAL Forum" style="-fx-font-size: 24px; -fx-text-fill: white; -fx-font-weight: bold;"/>
+        </VBox>
+
+        <!-- Search and Add Post Section -->
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <!-- Search Field -->
+            <TextField fx:id="searchField"
+                       promptText="Search by author or content..."
+                       style="-fx-background-radius: 5; -fx-pref-width: 300;"
+                       onKeyReleased="#handleSearch"/>
+
+            <!-- Add New Post Button -->
+            <Button fx:id="addNewPostButton"
+                    text="Add New Post"
+                    style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold;"
+                    onAction="#handleAddNewPost"/>
+        </HBox>
+
+        <!-- Posts Container -->
+        <VBox fx:id="postsContainer" spacing="15">
+            <!-- Dynamic posts will be inserted here -->
+        </VBox>
+
+        <!-- Sample Post Template (hidden, for reference only) -->
+        <VBox fx:id="postTemplate" style="-fx-background-color: white; -fx-padding: 15; -fx-border-color: #e0e0e0; -fx-border-radius: 5;" spacing="10" visible="false">
+            <!-- Post Header - Structure modifiée pour alignement parfait -->
+            <HBox spacing="10" style="-fx-padding: 0 0 5 0;">
+                <!-- Titre et date (gauche) -->
+                <HBox spacing="10" alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                    <Label fx:id="postTitle" style="-fx-font-weight: bold; -fx-font-size: 16; -fx-text-fill: #2e7d32;"/>
+                    <Label fx:id="postDate" style="-fx-font-size: 12; -fx-text-fill: #757575;"/>
+                </HBox>
+
+                <!-- Espace flexible entre titre et icône -->
+                <Region HBox.hgrow="ALWAYS"/>
+
+                <!-- Icône PDF (extrême droite) -->
+                <Button fx:id="exportPdfButton" style="-fx-background-color: transparent; -fx-padding: 0;">
+                    <graphic>
+                        <ImageView fitWidth="20" fitHeight="20">
+                            <Image url="@/pdf-icon.png"/>
+                        </ImageView>
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="Export to PDF"/>
+                    </tooltip>
+                </Button>
+            </HBox>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label fx:id="postAuthor" style="-fx-font-style: italic; -fx-font-size: 14;"/>
+            </HBox>
+
+            <Text fx:id="postContent" wrappingWidth="600"/>
+
+            <!-- Action buttons -->
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Button fx:id="editButton" text="Edit" style="-fx-background-color: #FFC107; -fx-text-fill: black;"/>
+                <Button fx:id="deleteButton" text="Delete" style="-fx-background-color: #f44336; -fx-text-fill: white;"/>
+                <Button fx:id="addCommentButton" text="Add comment" style="-fx-background-color: #388e3c; -fx-text-fill: white;"/>
+            </HBox>
+
+            <!-- Comments section -->
+            <VBox fx:id="commentsContainer" style="-fx-padding: 10 0 0 20;" spacing="8">
+                <!-- Dynamic comments will be inserted here -->
+            </VBox>
+        </VBox>
+    </VBox>
+</ScrollPane>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<DialogPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AddCommentController">
+    <!-- Styled header -->
+    <header>
+        <VBox alignment="CENTER_LEFT" spacing="5" style="-fx-background-color: #388e3c; -fx-padding: 10;">
+            <Label text="New Comment" style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16;"/>
+            <Label text="Share your thoughts" style="-fx-text-fill: #e0f7fa; -fx-font-size: 12;"/>
+        </VBox>
+    </header>
+
+    <!-- Main content -->
+    <content>
+        <VBox spacing="15" style="-fx-padding: 15;" minWidth="400">
+            <!-- Author name field -->
+            <VBox spacing="5">
+                <Label text="Your Name:" style="-fx-text-fill: #2e7d32; -fx-font-weight: bold;"/>
+                <TextField fx:id="authorField"
+                           promptText="Enter your name"
+                           style="-fx-background-radius: 5;"/>
+            </VBox>
+
+            <!-- Comment content field -->
+            <VBox spacing="5">
+                <Label text="Comment:" style="-fx-text-fill: #2e7d32; -fx-font-weight: bold;"/>
+                <TextArea fx:id="commentContent"
+                          promptText="Type your comment here..."
+                          wrapText="true"
+                          style="-fx-min-height: 150; -fx-background-radius: 5;"/>
+            </VBox>
+
+            <!-- Informational note -->
+            <Label text="Comments are public and visible to everyone."
+                   style="-fx-text-fill: #757575; -fx-font-size: 11; -fx-font-style: italic;"/>
+        </VBox>
+    </content>
+
+    <!-- Action buttons -->
+    <buttonTypes>
+        <ButtonType text="Cancel" buttonData="CANCEL_CLOSE"/>
+        <ButtonType text="Post Comment" buttonData="OK_DONE" />
+    </buttonTypes>
+</DialogPane>
