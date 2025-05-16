@@ -1,6 +1,8 @@
 package controllers;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import models.Comment;
 import models.Post;
@@ -12,6 +14,8 @@ public class AddCommentController {
 
     @FXML private TextField authorField;
     @FXML private TextArea commentContent;
+    @FXML private Button submitButton;
+    @FXML private Button clearButton;
 
     private Post parentPost;
     private final CommentService commentService = new CommentService();
@@ -21,49 +25,47 @@ public class AddCommentController {
         this.parentPost = post;
     }
 
-    // Handle form submission
-    public boolean handleSubmit() {
+    // Handle form submission (lié au bouton Publish)
+    @FXML
+    private void handleSubmit(ActionEvent event) {
         try {
             String author = authorField.getText();
             String content = commentContent.getText();
 
             if (author.isEmpty() || content.isEmpty()) {
-                showAlert("Champs vides", "Veuillez remplir tous les champs.");
-                return false;
+                showAlert("Empty fields", "Please fill all fields");
+                return;
             }
 
-            if (parentPost == null) {
-                showAlert("Erreur", "Aucun post parent n’a été défini.");
-                return false;
+            if (parentPost == null || parentPost.getId() <= 0) {
+                showAlert("Error", "No valid parent post defined");
+                return;
             }
 
             Comment newComment = new Comment();
             newComment.setAuthor(author);
             newComment.setContent(content);
-            newComment.setPost(parentPost); // ← OBLIGATOIRE !
+            newComment.setPost(parentPost);
 
             commentService.createComment(newComment);
 
-            return true;
+            // Fermer la fenêtre après succès
+            closeWindow(event);
 
+        } catch (SQLException e) {
+            e.printStackTrace();
+            showAlert("Database Error", "Failed to add comment: " + e.getMessage());
         } catch (Exception e) {
             e.printStackTrace();
-            showAlert("Erreur", "Échec de l'ajout du commentaire.");
-            return false;
+            showAlert("Error", "An unexpected error occurred");
         }
     }
 
-
-    // Configure dialog buttons
-    public void configureDialog(Dialog<ButtonType> dialog) {
-        System.out.println("[DEBUG] Configuring dialog buttons...");
-        dialog.setResultConverter(buttonType -> {
-            if (buttonType.getButtonData() == ButtonBar.ButtonData.OK_DONE) {
-                System.out.println("[DEBUG] OK button clicked");
-                return handleSubmit() ? buttonType : null;
-            }
-            return null;
-        });
+    // Handle clear form (lié au bouton Clear)
+    @FXML
+    private void handleClear(ActionEvent event) {
+        authorField.clear();
+        commentContent.clear();
     }
 
     // Show error alert
@@ -75,8 +77,45 @@ public class AddCommentController {
         alert.showAndWait();
     }
 
-    // Close the window
-    private void closeWindow() {
+    // Close the window (adaptée pour utiliser l'event)
+    private void closeWindow(ActionEvent event) {
+        ((Node)(event.getSource())).getScene().getWindow().hide();
+    }
+
+    // Méthode optionnelle pour fermer sans event
+    public void closeWindow() {
         authorField.getScene().getWindow().hide();
+    }
+
+    public boolean validateAndSubmit() {
+        try {
+            String author = authorField.getText();
+            String content = commentContent.getText();
+
+            if (author.isEmpty() || content.isEmpty()) {
+                showAlert("Empty Fields", "Please fill all fields");
+                return false;
+            }
+
+            if (parentPost == null) {
+                showAlert("Error", "No parent post defined");
+                return false;
+            }
+
+            Comment newComment = new Comment();
+            newComment.setAuthor(author);
+            newComment.setContent(content);
+            newComment.setPost(parentPost);
+
+            commentService.createComment(newComment);
+            return true;
+
+        } catch (SQLException e) {
+            showAlert("Database Error", "Failed to add comment: " + e.getMessage());
+            return false;
+        } catch (Exception e) {
+            showAlert("Error", "An unexpected error occurred");
+            return false;
+        }
     }
 }

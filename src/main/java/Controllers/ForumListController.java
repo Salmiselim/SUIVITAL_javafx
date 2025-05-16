@@ -257,23 +257,31 @@ public class ForumListController {
             AddCommentController controller = loader.getController();
             controller.setParentPost(post);
 
-            Dialog<Boolean> dialog = new Dialog<>();
+            Dialog<ButtonType> dialog = new Dialog<>();
             dialog.setDialogPane(dialogPane);
             dialog.setTitle("New Comment");
 
+            // Configuration du résultat
             dialog.setResultConverter(buttonType -> {
                 if (buttonType == ButtonType.OK) {
-                    return controller.handleSubmit();
+                    try {
+                        // Appel direct à la logique de soumission
+                        if (controller.validateAndSubmit()) {
+                            return ButtonType.OK;
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                 }
-                return false;
+                return null;
             });
 
-            Optional<Boolean> result = dialog.showAndWait();
-            if (result.isPresent() && result.get()) {
+            Optional<ButtonType> result = dialog.showAndWait();
+            if (result.isPresent() && result.get() == ButtonType.OK) {
                 loadPosts();
             }
         } catch (IOException e) {
-            showAlert(Alert.AlertType.INFORMATION, "Error", "Cannot open comment dialog");
+            showAlert(Alert.AlertType.ERROR, "Error", "Cannot open comment dialog");
         }
     }
 

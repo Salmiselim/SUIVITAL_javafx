@@ -6,18 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="633719e1-bbf9-4339-b08a-c7979785c246" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Medicament.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Medicament.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/models/Ordonnance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/models/Ordonnance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/outils/MyDataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/outils/MyDataBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/Crud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/Crud.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/MedService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/MedService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/OrdonnanceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/OrdonnanceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/AddMed.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AddMed.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/DisplayMed.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/DisplayMed.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/EditMed.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/EditMed.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/AddCommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/AddCommentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/AddMedController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/DisplayMedController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/EditMedController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/Medicament.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/models/Ordonnance.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/MedService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/OrdonnanceService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/AddComment.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/AddComment.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/AddMed.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/DisplayMed.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/EditMed.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +50,7 @@
   "keyToString": {
     "Application.JavaFXApp.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "bassem",
     "kotlin-language-version-configured": "true",
@@ -87,8 +88,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.21829.142" />
-        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-IU-242.21829.142" />
+        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27" />
       </set>
     </attachedChunks>
   </component>
@@ -102,6 +103,7 @@
       <updated>1744905811183</updated>
       <workItem from="1744905812220" duration="15181000" />
       <workItem from="1744965067819" duration="560000" />
+      <workItem from="1747357936099" duration="438000" />
     </task>
     <servers />
   </component>
